@@ -173,6 +173,10 @@ PRODUCT_PACKAGES += \
 	libtextclassifier_actions_suggestions_universal_model \
 	libtextclassifier_lang_id_model
 
+# Updater
+PRODUCT_COPY_FILES += \
+    vendor/pb/prebuilt/common/etc/init/init.pixelbuilds-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixelbuilds-updater.rc
+
 # Repainter integration
 PRODUCT_PACKAGES += \
     RepainterServicePriv
