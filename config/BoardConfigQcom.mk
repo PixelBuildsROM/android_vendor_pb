@@ -190,12 +190,18 @@ else
     QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
 endif
 
+# Allow a device to manually override which HALs it wants to use
+ifneq ($(OVERRIDE_QCOM_HARDWARE_VARIANT),)
+QCOM_HARDWARE_VARIANT := $(OVERRIDE_QCOM_HARDWARE_VARIANT)
+endif
+
 # Allow a device to opt-out hardset of PRODUCT_SOONG_NAMESPACES
 QCOM_SOONG_NAMESPACE ?= hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)
 PRODUCT_SOONG_NAMESPACES += $(QCOM_SOONG_NAMESPACE)
 
 # Add display-commonsys to PRODUCT_SOONG_NAMESPACES for QSSI supported platforms
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/display \
     vendor/qcom/opensource/commonsys-intf/display
