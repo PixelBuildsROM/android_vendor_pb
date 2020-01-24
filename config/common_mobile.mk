@@ -1,10 +1,6 @@
 # Inherit common mobile PixelBuilds stuff
 $(call inherit-product, vendor/pb/config/common.mk)
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # Customizations
 PRODUCT_PACKAGES += \
     NavigationBarMode2ButtonOverlay
