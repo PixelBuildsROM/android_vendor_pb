@@ -163,3 +163,6 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 # Versioning
 include vendor/pb/config/version.mk
+
+# Audio
+include vendor/pb/config/audio.mk
