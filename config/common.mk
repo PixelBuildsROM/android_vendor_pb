@@ -170,3 +170,6 @@ include vendor/pb/config/version.mk
 
 # Audio
 include vendor/pb/config/audio.mk
+
+# Bootanimation
+include vendor/pb/config/bootanimation.mk
