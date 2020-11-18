@@ -176,3 +176,6 @@ include vendor/pb/config/bootanimation.mk
 
 # Fonts
 include vendor/pb/config/fonts.mk
+
+# RRO overlays
+include vendor/pb/config/rro_overlays.mk
