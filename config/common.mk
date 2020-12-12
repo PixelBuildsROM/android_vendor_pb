@@ -170,6 +170,13 @@ TARGET_SUPPORTS_CALL_RECORDING ?= true
 TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
 TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
 
+# TextClassifier
+PRODUCT_PACKAGES += \
+	libtextclassifier_annotator_en_model \
+	libtextclassifier_annotator_universal_model \
+	libtextclassifier_actions_suggestions_universal_model \
+	libtextclassifier_lang_id_model
+
 # Repainter integration
 PRODUCT_PACKAGES += \
     RepainterServicePriv
