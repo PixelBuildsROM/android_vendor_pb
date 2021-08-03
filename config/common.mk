@@ -196,3 +196,6 @@ include vendor/pb/config/fonts.mk
 
 # RRO overlays
 include vendor/pb/config/rro_overlays.mk
+
+# Key migration
+include vendor/pb/config/keys_migration.mk
