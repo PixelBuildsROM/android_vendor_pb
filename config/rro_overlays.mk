@@ -5,5 +5,7 @@ PRODUCT_PACKAGES += \
     FontKaiOverlay \
     FontRubikRubikOverlay \
     FontSamOverlay \
-    FontVictorOverlay
-
+    FontVictorOverlay \
+    PixelLauncherThemeResources \
+    PixelLauncherOverlay \
+    PixelLauncherCustomOverlay
