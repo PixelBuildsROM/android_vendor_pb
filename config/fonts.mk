@@ -5,7 +5,8 @@ PRODUCT_PACKAGES += \
 # google-sans family
 PRODUCT_PACKAGES += \
     GoogleSans-Italic.ttf \
-    GoogleSans-Regular.ttf
+    GoogleSans-Regular.ttf \
+    GoogleSansFlex-Regular.ttf
 
 # Lustria family
 PRODUCT_PACKAGES += \
