@@ -145,7 +145,7 @@ ifneq ($(filter $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FA
 endif
 
 # List of targets that use master side content protection
-MASTER_SIDE_CP_TARGET_LIST := msm8996 $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)
+MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660 $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_LEGACY_FAMILY) $(UM_4_19_FAMILY)
 
 # Opt-in for old rmnet_data driver
 ifeq ($(filter $(UM_5_15_FAMILY),$(TARGET_BOARD_PLATFORM)),)
