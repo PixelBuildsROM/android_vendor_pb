@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# PixelBuilds update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
-
+PIXELBUILDS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(PIXELBUILDS_VERSION).zip
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(PIXELBUILDS_TARGET_PACKAGE)
+	$(hide) $(SHA256) $(PIXELBUILDS_TARGET_PACKAGE) | cut -d ' ' -f1 > $(PIXELBUILDS_TARGET_PACKAGE).sha256sum
+	@echo "Package Complete: $(PIXELBUILDS_TARGET_PACKAGE)" >&2
+	@echo -e "sha256: `cat $(PIXELBUILDS_TARGET_PACKAGE).sha256sum | cut -d ' ' -f 1`"
