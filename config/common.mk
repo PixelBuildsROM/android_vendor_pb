@@ -150,10 +150,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pb/overlay/no-rro
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pb/overlay
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/pb/overlay/common \
-    vendor/pb/overlay/no-rro
+    vendor/pb/overlay/common
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
