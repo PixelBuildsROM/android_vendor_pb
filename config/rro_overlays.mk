@@ -8,4 +8,19 @@ PRODUCT_PACKAGES += \
     FontVictorOverlay \
     PixelLauncherThemeResources \
     PixelLauncherOverlay \
-    PixelLauncherCustomOverlay
+    PixelLauncherCustomOverlay \
+    GoogleConfigOverlay \
+    GooglePermissionControllerOverlay \
+    GoogleWebViewOverlay \
+    NetworkStackOverlay \
+    PixelConfigOverlayCommon \
+    PixelConfigOverlay2018 \
+    PixelConfigOverlay2019 \
+    PixelConfigOverlay2019Midyear \
+    PixelConfigOverlay2021 \
+    PixelSetupWizardOverlay \
+    SettingsGoogleOverlay \
+    SystemUIGoogleOverlay \
+    TelephonyProviderOverlay \
+    TelecomOverlay \
+    TeleServiceOverlay 
