@@ -13,7 +13,9 @@ PRODUCT_PACKAGES += \
 
 # Default ringtone
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=Orion.ogg
+    ro.config.ringtone=Your_new_adventure.ogg \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.alarm_alert=Bright_morning.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
