@@ -174,6 +174,9 @@ include vendor/pb/config/audio.mk
 # Bootanimation
 include vendor/pb/config/bootanimation.mk
 
+# GMS
+include vendor/gms/products/gms.mk
+
 # Fonts
 include vendor/pb/config/fonts.mk
 
