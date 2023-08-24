@@ -2,4 +2,5 @@
 <resources>
     <string name="display_white_balance_summary">Dynamically adjusts the display based on surrounding light levels</string>
     <string name="display_white_balance_title">Ambient EQ</string>
+    <string name="config_settingsintelligence_package_name">com.google.android.settings.intelligence</string>
 </resources>
