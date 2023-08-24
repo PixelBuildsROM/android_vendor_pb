@@ -5,13 +5,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # Internal version
-PB_VERSION := 1.0-alpha
-
-# Platform version
-PLAT_VERSION := 13.0
+PB_VERSION := trinity-alpha
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(PB_BUILD))
-PIXELBUILDS_VERSION := PixelBuilds_$(TARGET_PRODUCT_SHORT)-$(PLAT_VERSION)_$(PB_VERSION)-$(shell date +%Y%m%d)
+PIXELBUILDS_VERSION := PixelBuilds_$(TARGET_PRODUCT_SHORT)-$(PB_VERSION)-$(shell date +%Y%m%d)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.custom=$(PB_VERSION) \
