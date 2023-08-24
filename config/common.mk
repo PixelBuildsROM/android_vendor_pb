@@ -170,6 +170,10 @@ PRODUCT_PACKAGES += \
     PixelLiveWallpapersOverlay
 endif
 
+# Repainter integration
+PRODUCT_PACKAGES += \
+    RepainterServicePriv
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
 # Versioning
