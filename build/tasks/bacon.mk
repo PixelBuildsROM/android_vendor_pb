@@ -24,4 +24,7 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(PIXELBUILDS_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(PIXELBUILDS_TARGET_PACKAGE) | cut -d ' ' -f1 > $(PIXELBUILDS_TARGET_PACKAGE).sha256sum
 	@echo "Package Complete: $(PIXELBUILDS_TARGET_PACKAGE)" >&2
-	@echo -e "sha256: `cat $(PIXELBUILDS_TARGET_PACKAGE).sha256sum | cut -d ' ' -f 1`"
+	@echo "sha256:" $(shell cat $(PIXELBUILDS_TARGET_PACKAGE).sha256sum | cut -d ' ' -f 1)
+	echo "";
+	cat build/make/pb_ascii_logo;
+	echo "";
