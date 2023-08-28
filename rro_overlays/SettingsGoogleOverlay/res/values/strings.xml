@@ -3,4 +3,9 @@
     <string name="display_white_balance_summary">Dynamically adjusts the display based on surrounding light levels</string>
     <string name="display_white_balance_title">Ambient EQ</string>
     <string name="config_settingsintelligence_package_name">com.google.android.settings.intelligence</string>
+    <string name="config_styles_and_wallpaper_picker_action">android.intent.action.SET_WALLPAPER</string>
+    <string name="config_styles_and_wallpaper_picker_class">com.android.customization.picker.CustomizationPickerActivity</string>
+    <string name="config_wallpaper_picker_action">android.intent.action.MAIN</string>
+    <string name="config_wallpaper_picker_class">com.google.android.apps.wallpaper.picker.CategoryPickerActivity</string>
+    <string name="config_wallpaper_picker_package">com.google.android.apps.wallpaper</string>
 </resources>
