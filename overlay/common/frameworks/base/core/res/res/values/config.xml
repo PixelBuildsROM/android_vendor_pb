@@ -53,6 +53,8 @@
         <item>com.shannon.imsservice</item>
         <!-- MediaTek ImsService -->
         <item>com.mediatek.ims</item>
+        <!-- Location history-->
+        <item>com.google.android.gms.location.history</item>
     </string-array>
 
     <bool name="config_cellBroadcastAppLinks">true</bool>
