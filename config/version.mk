@@ -5,7 +5,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # Internal version
-PB_VERSION ?= trinity-alpha
+PB_VERSION ?= unity-beta
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(PB_BUILD))
 PIXELBUILDS_VERSION ?= PixelBuilds_$(TARGET_PRODUCT_SHORT)-$(PB_VERSION)-$(shell date +%Y%m%d-%H%M)
