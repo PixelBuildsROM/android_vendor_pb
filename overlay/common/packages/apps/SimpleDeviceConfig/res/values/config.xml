@@ -205,5 +205,9 @@
         <item>runtime_native/usap_pool_size_max=10</item>
         <item>runtime_native/usap_pool_size_min=1</item>
         <item>runtime_native/usap_refill_threshold=5</item>
+        
+        <!-- For SeedVault Backup -->
+        <item>backup_and_restore/backup_transport_future_timeout_millis=900000</item>
+        <item>backup_and_restore/backup_transport_callback_timeout_millis=900000</item>
     </string-array>
 </resources>
