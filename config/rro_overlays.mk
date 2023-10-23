@@ -20,7 +20,13 @@ PRODUCT_PACKAGES += \
     PixelConfigOverlay2021 \
     PixelSetupWizardOverlay \
     SettingsGoogleOverlay \
+    SettingsProviderOverlay \
     SystemUIGoogleOverlay \
     TelephonyProviderOverlay \
     TelecomOverlay \
-    TeleServiceOverlay 
+    TeleServiceOverlay \
+    AccessibilityMenuOverlay \
+    CellBroadcastReceiverOverlay \
+    ClearCallingSettingsOverlay2022 \
+    GoogleHealthConnectOverlay \
+    MediaProviderOverlay
