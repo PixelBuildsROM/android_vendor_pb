@@ -6,9 +6,6 @@ PRODUCT_PACKAGES += \
     FontRubikRubikOverlay \
     FontSamOverlay \
     FontVictorOverlay \
-    PixelLauncherThemeResources \
-    PixelLauncherOverlay \
-    PixelLauncherCustomOverlay \
     GoogleConfigOverlay \
     GooglePermissionControllerOverlay \
     GoogleWebViewOverlay \
