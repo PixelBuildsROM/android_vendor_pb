@@ -177,6 +177,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RepainterServicePriv
 
+# Wallpaper stub
+PRODUCT_PACKAGES += \
+    PixelBuildsWalls
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
 # Versioning
