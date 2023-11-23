@@ -64,12 +64,6 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
-# Bootanimation
-TARGET_SCREEN_WIDTH ?= 1080
-TARGET_SCREEN_HEIGHT ?= 1920
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # Build Manifest
 PRODUCT_PACKAGES += \
     build-manifest
@@ -192,9 +186,6 @@ include vendor/pb/config/version.mk
 
 # Audio
 include vendor/pb/config/audio.mk
-
-# Bootanimation
-include vendor/pb/config/bootanimation.mk
 
 # GMS
 include vendor/gms/products/gms.mk
