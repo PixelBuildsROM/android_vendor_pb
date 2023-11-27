@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Paranoid Sense</string>
+    <string name="face_enroll_title">Centra la teva cara a la càmera</string>
+    <string name="face_enroll_description">Mantingueu-vos immòbil i assegureu-vos que esteu en un entorn ben il·luminat</string>
+    <string name="face_try_again_title">No he pogut capturar la teva cara</string>
+    <string name="face_try_again_description">Toca a continuació per tornar-ho a provar. La propera vegada, assegureu-vos que esteu en un entorn ben il·luminat i que res us enfosqui la cara</string>
+    <string name="btn_try_again">Torna-ho a provar</string>
+    <string name="attr_light_dark">La cara necessita més llum</string>
+    <string name="attr_light_high">La cara té massa llum</string>
+    <string name="attr_light_shadow">La cara té massa ombres</string>
+    <string name="unlock_failed_face_blur">La cara és massa borrosa</string>
+    <string name="unlock_failed_face_large">La cara està massa a prop</string>
+    <string name="unlock_failed_face_multi">S\'han detectat massa cares</string>
+    <string name="unlock_failed_face_not_complete">Només s\'ha detectat una cara parcial</string>
+    <string name="unlock_failed_face_small">La cara està massa lluny</string>
+</resources>
