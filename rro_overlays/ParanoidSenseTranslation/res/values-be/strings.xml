@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Paranoid Sense</string>
+    <string name="face_enroll_title">Адцэнтруйце твар у камеры</string>
+    <string name="face_enroll_description">Будзьце нерухомыя і пераканайцеся, што вы знаходзіцеся ў добра асветленым памяшканні</string>
+    <string name="face_try_again_title">Не ўдалося захапіць ваш твар</string>
+    <string name="face_try_again_description">Націсніце ніжэй, каб паўтарыць спробу. У наступны раз пераканайцеся, што вы знаходзіцеся ў добра асветленым памяшканні і нішто не закрывае ваш твар</string>
+    <string name="btn_try_again">Паспрабуй яшчэ</string>
+    <string name="attr_light_dark">Твар патрабуе больш святла</string>
+    <string name="attr_light_high">На твары занадта шмат святла</string>
+    <string name="attr_light_shadow">На твары занадта шмат ценяў</string>
+    <string name="unlock_failed_face_blur">Твар занадта размыты</string>
+    <string name="unlock_failed_face_large">Твар занадта блізка</string>
+    <string name="unlock_failed_face_multi">Выяўлена занадта шмат твараў</string>
+    <string name="unlock_failed_face_not_complete">Твар выяўлены толькі часткова</string>
+    <string name="unlock_failed_face_small">Твар знаходзіцца занадта далёка</string>
+</resources>
