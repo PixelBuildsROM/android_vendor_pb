@@ -168,6 +168,9 @@ PRODUCT_PACKAGES += \
 	libtextclassifier_lang_id_model
 
 # Updater
+PRODUCT_PACKAGES += \
+    Updater
+
 PRODUCT_COPY_FILES += \
     vendor/pb/prebuilt/common/etc/init/init.pixelbuilds-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixelbuilds-updater.rc
 
