@@ -166,8 +166,13 @@ PRODUCT_PACKAGES += \
 	libtextclassifier_lang_id_model
 
 # Updater
+ifeq ($(PB_BUILD_TYPE),release)
+PRODUCT_PACKAGES += \
+    Updater
+
 PRODUCT_COPY_FILES += \
     vendor/pb/prebuilt/common/etc/init/init.pixelbuilds-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixelbuilds-updater.rc
+endif
 
 # Wallpaper stub
 PRODUCT_PACKAGES += \
