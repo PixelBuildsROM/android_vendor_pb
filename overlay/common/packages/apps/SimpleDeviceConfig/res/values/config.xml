@@ -193,7 +193,7 @@
         <item>launcher/ENABLE_SMARTSPACE_ENHANCED=true</item>
         <item>launcher/ENABLE_QUICK_LAUNCH_V2=false</item>
         <item>launcher/GBOARD_UPDATE_ENTER_KEY=false</item>
-        <item>launcher/enable_one_search=false</item>
+        <item>launcher/enable_one_search=true</item>
         <item>launcher/enable_quick_launch_v2=false</item>
     </string-array>
 </resources>
