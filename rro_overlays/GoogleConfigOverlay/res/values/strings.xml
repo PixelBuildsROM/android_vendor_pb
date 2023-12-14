@@ -28,6 +28,8 @@
     <string name="config_healthConnectMigratorPackageName">com.google.android.apps.healthdata</string>
     <string name="config_persistentDataPackageName">com.google.android.gms</string>
     <string name="config_primaryLocationTimeZoneProviderPackageName">com.google.android.gms</string>
+    <string name="config_sharedConnectivityServiceIntentAction" translatable="false">com.google.android.gms.magictether.BIND</string>
+    <string name="config_sharedConnectivityServicePackage" translatable="false">com.google.android.gms</string>
     <string name="config_secondaryLocationTimeZoneProviderPackageName" />
     <string name="config_systemActivityRecognizer">com.google.android.gms</string>
     <string name="config_systemAutomotiveProjection">com.google.android.projection.gearhead</string>

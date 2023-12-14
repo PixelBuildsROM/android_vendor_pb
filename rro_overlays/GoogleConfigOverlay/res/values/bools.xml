@@ -7,4 +7,5 @@
     <bool name="config_hotspotNetworksEnabledForService">false</bool>
     <bool name="config_knownNetworksEnabledForService">false</bool>
     <bool name="config_settingsHelpLinksEnabled">true</bool>
+    <bool name="config_repairModeSupported">false</bool>
 </resources>

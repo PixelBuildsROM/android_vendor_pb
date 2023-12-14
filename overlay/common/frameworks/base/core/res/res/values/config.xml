@@ -155,6 +155,10 @@
     <!-- Whether or not to enable the lock screen entry point for the QR code scanner. -->
     <bool name="config_enableQrCodeScannerOnLockScreen">true</bool>
     
+    <!-- Whether to enable the biometric notification for dual-modality device that enrolled a
+         single biometric and experiences high FRR. -->
+     <bool name="config_biometricFrrNotificationEnabled">true</bool>
+
      <!-- Name of the font family to use in the default lockscreen clock -->
     <string name="config_clockFontFamily">google-sans-clock</string>
     
