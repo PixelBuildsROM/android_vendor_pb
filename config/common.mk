@@ -64,6 +64,10 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
+# SurfaceFlinger
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.surface_flinger.enable_frame_rate_override=false
+
 # Build Manifest
 PRODUCT_PACKAGES += \
     build-manifest
