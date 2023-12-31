@@ -30,6 +30,9 @@ function checkExit () {
 # Releaser path
 RELEASE_HELPER_PATH="vendor/pb/private/release.sh"
 
+# Uploader path
+UPLOAD_HELPER_PATH="vendor/pb/private/upload.sh"
+
 # Output usage help
 function showHelpAndExit {
         echo -e "${CLR_BLD_BLU}Usage: $0 <device> [options]${CLR_RST}"
@@ -39,7 +42,8 @@ function showHelpAndExit {
         echo -e "${CLR_BLD_BLU}  -c, --clean           Wipe the tree before building${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -i, --installclean    Dirty build - Use 'installclean'${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -s, --repo-sync       Sync before building${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}  -r, --release         Whether we should do a signed release build"
+        echo -e "${CLR_BLD_BLU}  -r, --release         Whether we should do a signed release build (won't work without helper)"
+        echo -e "${CLR_BLD_BLU}  -u, --upload          Whether we should upload a build (won't work without helper)"
         echo -e "${CLR_BLD_BLU}  -t, --build-type      Specify build type${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -j, --jobs            Specify jobs/threads to use${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -k, --sign-keys       Specify path to sign key mappings${CLR_RST}"
@@ -49,7 +53,7 @@ function showHelpAndExit {
 
 # Setup getopt.
 long_opts="help,clean,installclean,repo-sync,release,build-type:,jobs:,module:,sign-keys:,pwfile:,backup-unsigned,delta:,imgzip,version:"
-getopt_cmd=$(getopt -o hcris:t:j:k:p: --long "$long_opts" \
+getopt_cmd=$(getopt -o hcruis:t:j:k:p: --long "$long_opts" \
             -n $(basename $0) -- "$@") || \
             { echo -e "${CLR_BLD_RED}\nError: Getopt failed. Extra args\n${CLR_RST}"; showHelpAndExit; exit 1;}
 
@@ -62,6 +66,7 @@ while true; do
         -i|--installclean|i|installclean) FLAG_INSTALLCLEAN_BUILD=y;;
         -s|--repo-sync|s|repo-sync) FLAG_SYNC=y;;
         -r|--release|r|release) FLAG_PB_RELEASE=y;;
+        -u|--upload|u|upload) FLAG_PB_UPLOAD=y;;
         -t|--build-type|t|build-type) BUILD_TYPE="$2"; shift;;
         -j|--jobs|j|jobs) JOBS="$2"; shift;;
         -k|--sign-keys|k|sign-keys) KEY_MAPPINGS="$2"; shift;;
@@ -161,10 +166,19 @@ fi
 # Check if we do a release build. If so, build signed release package, else - make bacon
 if [ "$FLAG_PB_RELEASE" ]; then
         if [ -e "$RELEASE_HELPER_PATH" ]; then
-        echo -e "${CLR_BLD_BLU}Will now begin the release build${CLR_RST}"
-        source "$RELEASE_HELPER_PATH"
-        release
-        checkExit
+                echo -e "${CLR_BLD_BLU}Will now begin the release build${CLR_RST}"
+                source "$RELEASE_HELPER_PATH"
+                release
+                checkExit
+                if [ "$FLAG_PB_UPLOAD" ]; then
+                        if [ -e "$UPLOAD_HELPER_PATH" ]; then
+                                source "$UPLOAD_HELPER_PATH"
+                                upload
+                                checkExit
+                        else
+                                echo -e "${CLR_BLD_RED}warning: The upload flag is set, but the helper doesn't exist !${CLR_RST}"
+                        fi
+                fi
         else
                 echo -e "${CLR_BLD_RED}error: The release flag is set, but the helper doesn't exist !${CLR_RST}"
                 exit 1
@@ -174,4 +188,13 @@ else
         echo -e ""
         make bacon -j$JOBS
         checkExit
+        if [ "$FLAG_PB_UPLOAD" ]; then
+                if [ -e "$UPLOAD_HELPER_PATH" ]; then
+                        source "$UPLOAD_HELPER_PATH"
+                        upload
+                        checkExit
+                else
+                        echo -e "${CLR_BLD_RED}warning: The upload flag is set, but the helper doesn't exist !${CLR_RST}"
+                fi
+        fi
 fi
