@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d304e706_3e81f3c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-01-28T23:26:58Z",
+      "side": 1,
+      "message": "Comment removed by: Bartłomiej Rudecki; Reason: mistake",
+      "revId": "b333fb2fde8a45fe8c33133e1ac6f16860f873f6",
+      "serverId": "54889931-03f6-4e00-8ab8-119c55947771"
+    }
+  ]
+}
