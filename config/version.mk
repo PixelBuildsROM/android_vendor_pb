@@ -12,7 +12,7 @@ TARGET_PRODUCT_SHORT := $(subst aosp_,,$(PB_BUILD))
 PIXELBUILDS_VERSION ?= PixelBuilds_$(TARGET_PRODUCT_SHORT)-$(PB_VERSION)-$(shell date +%Y%m%d-%H%M)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.build.version.custom=$(PB_VERSION) \
+    ro.build.version.custom?=$(PB_VERSION) \
     ro.build.version.device=$(TARGET_PRODUCT_SHORT) \
-    ro.pb.build.version=$(PIXELBUILDS_VERSION) \
-    ro.pb.buildtype=$(PB_BUILD_TYPE)
+    ro.pb.build.version?=$(PIXELBUILDS_VERSION) \
+    ro.pb.buildtype?=$(PB_BUILD_TYPE)
