@@ -173,6 +173,22 @@
         <item>device_personalization_services/WallpaperEffects__return_texturedmesh_with_error_status=true</item>
         <item>device_personalization_services/WallpaperEffects__use_gpu=true</item>
 
+        <!--Gboard -->
+        <item>device_personalization_services/SmartRecPixelSearch__enable_gboard_suggestion=true</item>
+        <item>device_personalization_services/SmartRecPixelSearch__enable_spelling_correction=true</item>
+        <item>device_personalization_services/SmartRecPixelSearch__spelling_checker_frequency_score_overrides_map={"8":-7}</item>
+        <item>device_personalization_services/SmartRecCompose__enable_compose_action_filter=true</item> 
+        <item>device_personalization_services/SmartRecCompose__enable_deep_clu_model=true</item>
+        <item>device_personalization_services/SmartDictation__enable_alternatives_from_past_corrections=true</item>
+        <item>device_personalization_services/SmartDictation__enable_alternatives_from_speech_hypotheses=true</item>
+        <item>device_personalization_services/SmartDictation__enable_biasing_for_commands=true</item>
+        <item>device_personalization_services/SmartDictation__enable_biasing_for_contacts=true</item>
+        <item>device_personalization_services/SmartDictation__enable_biasing_for_contacts_learned_from_past_corrections=true</item>
+        <item>device_personalization_services/SmartDictation__enable_biasing_for_interests_model=true</item> 
+        <item>device_personalization_services/SmartDictation__enable_biasing_for_past_correction=true</item>
+        <item>device_personalization_services/SmartDictation__enable_biasing_for_screen_context=true</item>
+        <item>device_personalization_services/SmartDictation__enable_selection_filtering=true</item>
+
         <!-- Pixel Launcher -->
         <item>launcher/ENABLE_SMARTSPACE_ENHANCED=true</item>
         <item>launcher/ENABLE_QUICK_LAUNCH_V2=false</item>
