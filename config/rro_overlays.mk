@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     GooglePermissionControllerOverlay \
     GoogleWebViewOverlay \
     NetworkStackOverlay \
+    ParanoidSenseTranslation \
     PixelConfigOverlayCommon \
     PixelConfigOverlay2018 \
     PixelConfigOverlay2019 \
