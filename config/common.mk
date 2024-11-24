@@ -105,6 +105,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
+# Lindroid
+TARGET_LINDROID_SUPPORTED ?= false
+ifeq ($(TARGET_LINDROID_SUPPORTED),true)
+include vendor/lindroid/lindroid.mk
+endif
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.ntfs \
