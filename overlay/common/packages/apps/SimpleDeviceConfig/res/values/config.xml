@@ -134,8 +134,6 @@
         <item>device_personalization_services/NowPlaying__ambient_music_get_model_state_cooldown_seconds_cloud_search=9</item>
         <item>device_personalization_services/NowPlaying__ambient_music_index_manifest_17_09_02=279:https://storage.googleapis.com/music-iq-db/updatable_ytm_db/20240602-030103/manifest.json</item>
         <item>device_personalization_services/NowPlaying__ambient_music_matcher_match_threshold_17_09_02=-2.0</item>
-        <item>device_personalization_services/NowPlaying__ambient_music_on_demand_enabled=true</item>
-        <item>device_personalization_services/NowPlaying__ambient_music_on_demand_music_confidence=0.48</item>
         <item>device_personalization_services/NowPlaying__cloud_api_allowed=true</item>
         <item>device_personalization_services/NowPlaying__enable_usage_fa=true</item>
         <item>device_personalization_services/NowPlaying__favorites_enabled=true</item>
@@ -144,11 +142,6 @@
         <item>device_personalization_services/NowPlaying__handle_ambient_music_results_with_history=true</item>
         <item>device_personalization_services/NowPlaying__min_training_interval_millis=86400000</item>
         <item>device_personalization_services/NowPlaying__nnfp_v3_model_enabled=false</item>
-        <item>device_personalization_services/NowPlaying__on_demand_enable_eager_prompt=true</item>
-        <item>device_personalization_services/NowPlaying__on_demand_fingerprinter_being_setup_warning=true</item>
-        <item>device_personalization_services/NowPlaying__on_demand_hide_if_fingerprinter_install_not_confirmed=true</item>
-        <item>device_personalization_services/NowPlaying__on_demand_min_supported_aga_version=12.35.17</item>
-        <item>device_personalization_services/NowPlaying__on_demand_retry_fingerprinter_install=true</item>
         <item>device_personalization_services/NowPlaying__youtube_export_enabled=true</item>
 
         <!-- Adaptive Sound (Pixel 2020) -->
@@ -180,28 +173,36 @@
         <item>device_personalization_services/Captions__visibility_stopped_duration_millis=1500</item>
 
         <!-- Live translate -->
-        <item>device_personalization_services/Translate__app_blocklist=com.google.android.talk</item>
-        <item>device_personalization_services/Translate__blue_chip_translate_enabled=true</item>
-        <item>device_personalization_services/Translate__characterset_lang_detection_enabled=true</item>
         <item>device_personalization_services/Translate__chat_translate_languages=de,en,es,fr,it,ja,hi,zh,ru,pl,pt,ko,th,tr,nl,zh_Hant,sv,da,vi,ar,fa,no,bn,fil</item>
-        <item>device_personalization_services/Translate__copy_to_translate_enabled=true</item>
-        <item>device_personalization_services/Translate__differentiate_simplified_and_traditional_chinese=true</item>
-        <item>device_personalization_services/Translate__disable_translate_without_system_animation=false</item>
         <item>device_personalization_services/Translate__enable_chronicle_migration=true</item>
-        <item>device_personalization_services/Translate__enable_default_langid_model=true</item>
-        <item>device_personalization_services/Translate__enable_dictionary_langid_detection=true</item>
         <item>device_personalization_services/Translate__enable_opmv4_service=true</item>
-        <item>device_personalization_services/Translate__enable_settings_backup_restore=false</item>
-        <item>device_personalization_services/Translate__enable_setup_wizard_dialog_v2=false</item>
         <item>device_personalization_services/Translate__enable_spa_setting=false</item>
-        <item>device_personalization_services/Translate__enable_translate_kit_api_migration=false</item>
-        <item>device_personalization_services/Translate__interpreter_source_languages=de,en,ja,es,fr,it</item>
-        <item>device_personalization_services/Translate__interpreter_target_languages=de,en,ja,es,fr,it</item>
-        <item>device_personalization_services/Translate__replace_auto_translate_copied_text_enabled=true</item>
-        <item>device_personalization_services/Translate__text_to_text_language_list=vi,ja,fa,ro,nl,mr,mt,ar,ms,it,eo,is,et,es,iw,zh,uk,af,id,ur,mk,cy,hi,el,be,pt,lt,hr,lv,hu,ht,te,de,bg,th,bn,tl,pl,tr,kn,sv,gl,ko,sw,cs,da,ta,gu,ka,sl,ca,sk,ga,sq,no,fi,ru,fr,en,zh_Hant,fil</item>
-        <item>device_personalization_services/Translate__translation_service_enabled=true</item>
-        <item>device_personalization_services/Translate__translator_expiration_enabled=true</item>
-        <item>device_personalization_services/Translate__use_translate_kit_streaming_api=true</item>
+        <item>device_personalization_services/Translate__interpreter_source_languages=de,en,ja</item>
+        <item>device_personalization_services/Translate__interpreter_target_languages=de,en,ja</item>
+
+        <!-- On-device speech recognition-->
+        <item>device_personalization_services/SpeechPack__downloadable_language_packs_raw=ChRhc21kX2ZlYXR1cmVfbGlzdF9xYTLEAgoFZW4tVVMSBWVuLVVTGklodHRwczovL2RsLmdvb2dsZS5jb20vYW5kcm9pZC92b2ljZS9zb2RhL2VuLVVTL3YzMDA4L3NvZGEtZW4tVVMtdjMwMDguemlwIMAXKOnZAjIUc29kYS1lbi1VUy12MzAwOC1mNTQ4NkBkYkA5Mzc3MzkxNjMwREIzMDZBRUYzODFFREMwMjFBNEQ5QkM2OUMwMjA5RkZBQ0YwNjU4Qzg5MTE4NDcwRERDQTcxeAF4AngDeAR4BXgGeAeKASg2Q0NCOEQxRTdCNjFGQTI0MEUwMjAwNjc5QjlDMUQ1ODc2RjUzODZDogEOCBYQAxAEEAUQBhAJEAqiAQoIFxADEAQQCRAKqgEECAEQF6oBBAgCEBaqAQQIAxAXqgEECAQQFqoBBAgFEBeqAQQIBhAWqgEECAcQFjLAAgoFZGUtREUSBWRlLURFGklodHRwczovL2RsLmdvb2dsZS5jb20vYW5kcm9pZC92b2ljZS9zb2RhL2RlLURFL3YzMDAzL3NvZGEtZGUtREUtdjMwMDMuemlwILsXKKqABDIQc29kYS1kZS1ERS12MzAwMzg2QGRiQDBBRkE2QjNBNzFFMTk3ODkzM0RDNjlENjZCODU1OTY5REE1RThEQzBEMEI4RDREMEZBNkU4RjYzRTUxOTcyMzZ4AXgCeAN4BHgFeAZ4B4oBKDQ3M0FGRTMzMDNEMjc1RDMwREY5MkY5RTFFQTA2NEZFMjFBNEFBRDKiAQwIFhADEAQQBRAJEAqiAQwIFxADEAQQBRAJEAqqAQQIARAXqgEECAIQFqoBBAgDEBeqAQQIBBAWqgEECAUQF6oBBAgGEBaqAQQIBxAWMrQCCgVlcy1FUxIFZXMtRVMaSWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9hbmRyb2lkL3ZvaWNlL3NvZGEvZXMtRVMvdjMwMDAvc29kYS1lcy1FUy12MzAwMC56aXAguBcouIEDMhBzb2RhLWVzLUVTLXYzMDAwODZAZGJANTA4NjQ1MEUzMjdFNDk4QzBDNTdEQ0VGRDUwREMxOUM5ODBGRjQwNEQzRUI5ODA0N0UyQjFENkFDMkJGNUMzOXgBeAJ4A3gEeAV4BngHigEoNEY1NTRDNTE0MzYyMDU1MjVENTg1MTkzMjk4NzBFQzkwMjU4MjREQ6IBBggWEAkQCqIBBggXEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYyxAIKBWZyLUZSEgVmci1GUhpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9mci1GUi92MzAwMy9zb2RhLWZyLUZSLXYzMDAzLnppcCC7Fyi72QYyEHNvZGEtZnItRlItdjMwMDM4NkBkYkA2QTlENjg3QjExQjVCMTc2MTczNjMwMjk0MTMwNzk0RTc1NjcwRTlGQzc4REY0M0Y5NUVBNTE2RkNCOTc4RkMyeAF4AngDeAR4BXgGeAeKASgxNEQxNUQ2RDNFOEEzM0EzMTE5QjZCQjhCNjYwRDEwREIyRDYyNzRGogEOCBYQAxAEEAUQBhAJEAqiAQ4IFxADEAQQBRAGEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYyvAIKBWl0LUlUEgVpdC1JVBpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9pdC1JVC92MzAwMC9zb2RhLWl0LUlULXYzMDAwLnppcCC4FyitpQMyEHNvZGEtaXQtSVQtdjMwMDA4NkBkYkAzMDYyRTJCOUVBNEExNzlGMjA3NkJFNDQwQzVDNUQ0NjM3MDA2NzZFMkNBQ0U1MzU1NDUzNThBMjYyOEVDOEMyeAF4AngDeAR4BXgGeAeKASgxOEQyNUQ1NjFGRjMwRENEQUZDQ0E4N0Q3RUY3QjA4NEM0MDBCNTRFogEKCBYQAxAFEAkQCqIBCggXEAMQBRAJEAqqAQQIARAXqgEECAIQFqoBBAgDEBeqAQQIBBAWqgEECAUQF6oBBAgGEBaqAQQIBxAWMsACCgVlbi1BVRIFZW4tQVUaSWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9hbmRyb2lkL3ZvaWNlL3NvZGEvZW4tQVUvdjMwMDMvc29kYS1lbi1BVS12MzAwMy56aXAguxcowtYCMhBzb2RhLWVuLUFVLXYzMDAzODZAZGJAMTA1Q0Q4Mzg1RTNBMzA3N0RENUI5OUJDNTczRUUxMEE0NDAwRjc0QzY3NDk2NTJGMDJGRjlFODc5MkU4RDkxQXgBeAJ4A3gEeAV4BngHigEoOUE2QTU2NjdCNkEyREE5NjJGNUU3MzRCOUNFNUUzMzRCQTlDQjIzRaIBDggWEAMQBBAFEAYQCRAKogEKCBcQAxAEEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYywAIKBWVuLUdCEgVlbi1HQhpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9lbi1HQi92MzAwMi9zb2RhLWVuLUdCLXYzMDAyLnppcCC6Fyj01gIyEHNvZGEtZW4tR0ItdjMwMDI4NkBkYkBGRDgyOTRBQjJEQjlBQUVFRTAwMzlGMkI4MjRGMkMzMzhCMUYwRkJCMTU4QzU4MERGN0Y5MDc5NTdBRkRCNkM0eAF4AngDeAR4BXgGeAeKASg5RjY3RDgwNTUxNTFDMjAyNjYwRERDMjVCNEI0RDRGNDQyQ0UxOUFCogEOCBYQAxAEEAUQBhAJEAqiAQoIFxADEAQQCRAKqgEECAEQF6oBBAgCEBaqAQQIAxAXqgEECAQQFqoBBAgFEBeqAQQIBhAWqgEECAcQFjLAAgoFZW4tSUUSBWVuLUlFGklodHRwczovL2RsLmdvb2dsZS5jb20vYW5kcm9pZC92b2ljZS9zb2RhL2VuLUlFL3YzMDAyL3NvZGEtZW4tSUUtdjMwMDIuemlwILoXKPTWAjIQc29kYS1lbi1JRS12MzAwMjg2QGRiQDgyODY3RDVFRTRGOUIzM0IwOEYyN0NCMkI1OEM4OEM5NDg1RTMzMTFBNzgxRTA3MzYyODYzRkIzRjRFMjQwMTh4AXgCeAN4BHgFeAZ4B4oBKDZBNTMyQzBENURDQzE3Rjk3Rjc0OTkzMzRERjdFRkU1N0RDRjdERkaiAQ4IFhADEAQQBRAGEAkQCqIBCggXEAMQBBAJEAqqAQQIARAXqgEECAIQFqoBBAgDEBeqAQQIBBAWqgEECAUQF6oBBAgGEBaqAQQIBxAWMsACCgVlbi1TRxIFZW4tU0caSWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9hbmRyb2lkL3ZvaWNlL3NvZGEvZW4tU0cvdjMwMDEvc29kYS1lbi1TRy12MzAwMS56aXAguRco9NYCMhBzb2RhLWVuLVNHLXYzMDAxODZAZGJANDRBMkY4MDNGRjE4NDhGQUUwNzdBQzhCM0I0RkFDRTM5MDFEOUZGNTQxOTg3RUNCRUFERkJGRkE5MEQyRDhCMXgBeAJ4A3gEeAV4BngHigEoNEUyRjg0RTY5NkVFQUU0ODNEMjA3QTI0NEJERThERTJFNUU0OTA4QaIBDggWEAMQBBAFEAYQCRAKogEKCBcQAxAEEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYywAIKBWphLUpQEgVqYS1KUBpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9qYS1KUC92MzAwNC9zb2RhLWphLUpQLXYzMDA0LnppcCC8FyikyAMyEHNvZGEtamEtSlAtdjMwMDQ4NkBkYkA1MUU1M0U3MkU3REM1RjA2QzM0NzhBM0VEMDA1MTcwQjZCNEY3QTI5NjVGNUIyN0VCQ0YwOUM4ODJCOENFRjlCeAF4AngDeAR4BXgGeAeKASgyOEQzOTQ1RTBCQ0IyNkJDNUUzNzZGNzZBRDc5OEY4MTlFMThBMEM0ogEMCBYQAxAEEAUQCRAKogEMCBcQAxAEEAUQCRAKqgEECAEQF6oBBAgCEBaqAQQIAxAXqgEECAQQFqoBBAgFEBeqAQQIBhAWqgEECAcQFg</item>
+        <item>device_personalization_services/SpeechPack__enable_mdd_download_notifications=true</item>
+        <item>device_personalization_services/SpeechPack__speech_recognition_service_settings_enabled=true</item>
+        <item>device_personalization_services/SpeechPack__use_mdd_download_system=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__bias_name_options=CAA</item>
+        <item>device_personalization_services/SpeechRecognitionService__clear_logging_events_if_too_much_memory=false</item>
+        <item>device_personalization_services/SpeechRecognitionService__diarization_context_alignment_enabled=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__enable_best_effort_switch_upon_final_for_multilang=false</item>
+        <item>device_personalization_services/SpeechRecognitionService__enable_context_biasing_for_multilang=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__enable_locale_validation=false</item>
+        <item>device_personalization_services/SpeechRecognitionService__max_concurrent_recognition_sessions=1</item>
+        <item>device_personalization_services/SpeechRecognitionService__multilang_max_number_of_switches_per_final=1</item>
+        <item>device_personalization_services/SpeechRecognitionService__multilang_no_switch_after_ms_per_final=5000</item>
+        <item>device_personalization_services/SpeechRecognitionService__multilang_session_rewind_enabled=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__recognition_session_logging_uses_lang_id_events=false</item>
+        <item>device_personalization_services/SpeechRecognitionService__recognition_session_logging_uses_word_separator=false</item>
+        <item>device_personalization_services/SpeechRecognitionService__resumable_diarization_enabled=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__skip_model_download_user_confirmation=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__tng_transcription_soda_ttl_sec=10</item>
+        <item>device_personalization_services/SpeechRecognitionService__trigger_model_download_listener_enabled=true</item>
+        <item>device_personalization_services/SpeechRecognitionService__trigger_model_download_timeout_sec=10</item>
+        <item>device_personalization_services/SpeechRecognitionService__word_level_confidence_version=0</item>
 
         <!--Gboard -->
         <item>device_personalization_services/SmartRecPixelSearch__enable_gboard_suggestion=true</item>
@@ -221,7 +222,6 @@
 
         <!-- Pixel Launcher -->
         <item>launcher/ENABLE_SMARTSPACE_ENHANCED=true</item>
-        <item>launcher/ENABLE_QUICK_LAUNCH_V2=false</item>
         <item>launcher/GBOARD_UPDATE_ENTER_KEY=false</item>
         <item>launcher/enable_one_search=true</item>
         <item>launcher/enable_quick_launch_v2=false</item>
