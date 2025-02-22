@@ -3,7 +3,7 @@
 #           (C) 2017-2018,2020-2021, The LineageOS Project
 # Copyright (C) 2012-2015, SlimRoms Project
 # Copyright (C) 2016-2018, AOSiP
-# Copyright (C) 2023, PixelBuildsRom
+# Copyright (C) 2023-2025, PixelBuildsROM
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,14 +26,13 @@ import sys
 from xml.etree import ElementTree
 
 import urllib.error
-import urllib.parse
 import urllib.request
 
 DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
 custom_local_manifest = ".repo/local_manifests/pixelbuilds_manifest.xml"
-custom_default_revision = "unity"
+custom_default_revision = "infinity"
 custom_dependencies = "aosp.dependencies"
 org_manifest = "pixelbuilds-devices"  # leave empty if org is provided in manifest
 org_display = "PixelBuilds-Devices"  # needed for displaying
