@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="config_sound_picker_package_name" translatable="false">
+    com.google.android.soundpicker
+</string>
+</resources>
