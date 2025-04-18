@@ -221,3 +221,6 @@ include vendor/pb/config/rro_overlays.mk
 
 # Key migration
 include vendor/pb/config/keys_migration.mk
+
+# Inline keys
+-include vendor/pb-priv/keys/keys.mk
