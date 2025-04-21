@@ -3,4 +3,8 @@
 <string name="config_sound_picker_package_name" translatable="false">
     com.google.android.soundpicker
 </string>
+<!-- Contacts package name -->
+<string name="config_contacts_package_name" translatable="false">
+    com.android.contacts
+</string>
 </resources>
