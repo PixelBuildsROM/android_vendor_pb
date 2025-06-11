@@ -43,12 +43,12 @@ function showHelpAndExit {
         echo -e "${CLR_BLD_BLU}  -i, --installclean    Dirty build - Use 'installclean'${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -s, --repo-sync       Sync before building${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -g, --gerrit-pick     Pick changes from gerrit for the given topic name (ssh auth){CLR_RST}"
-        echo -e "${CLR_BLD_BLU}  -r, --release         Whether we should do a signed release build (won't work without helper)"
-        echo -e "${CLR_BLD_BLU}  -u, --upload          Whether we should upload a build (won't work without helper)"
+        echo -e "${CLR_BLD_BLU}  -r, --release         Whether we should do a signed release build (Will not work in non-production env)"
+        echo -e "${CLR_BLD_BLU}  -u, --upload          Whether we should upload a build (Will not work in non-production env)"
         echo -e "${CLR_BLD_BLU}  -t, --build-type      Specify build type${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -j, --jobs            Specify jobs/threads to use${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}  -k, --sign-keys       Specify path to sign key mappings${CLR_RST}"
-        echo -e "${CLR_BLD_BLU}  -p, --pwfile          Specify path to sign key password file${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}  -k, --sign-keys       Specify path to sign key mappings (Non-release builds have to be signed manually!)${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}  -p, --pwfile          Specify path to sign key password (Non-release builds have to be signed manually!)file${CLR_RST}"
         exit 1
 }
 
@@ -170,6 +170,13 @@ if [ "$FLAG_INSTALLCLEAN_BUILD" = 'y' ]; then
 	m installclean "$CMD"
 fi
 
+# Perform repopick, if topic was specified
+if [ $REPOPICK_TOPIC ]; then
+        echo -e "${CLR_BLD_BLU}Picking changes from gerrit for topic $REPOPICK_TOPIC ${CLR_RST}"
+        echo -e ""
+        repopick -t "$REPOPICK_TOPIC"
+fi
+
 # Build away!
 
 # Check if we do a release build. If so, build signed release package, else - make bacon
@@ -193,17 +200,39 @@ if [ "$FLAG_PB_RELEASE" ]; then
                 exit 1
         fi
 else
-        echo -e "${CLR_BLD_BLU}Start making bacon${CLR_RST}"
-        echo -e ""
-        make bacon -j$JOBS
-        checkExit
-        if [ "$FLAG_PB_UPLOAD" ]; then
-                if [ -e "$UPLOAD_HELPER_PATH" ]; then
-                        source "$UPLOAD_HELPER_PATH"
-                        upload
-                        checkExit
-                else
-                        echo -e "${CLR_BLD_RED}warning: The upload flag is set, but the helper doesn't exist !${CLR_RST}"
+        if [[ $KEY_MAPPINGS || $PWFILE ]]; then
+                echo -e "${CLR_BLD_RED}warning: It seems that you are trying to sign a build with specified keys."
+                echo -e "warning: This build script doesn't have any logic to accomodate that for"
+                echo -e "warning: non-release builds. Target files package will be made for you, but"
+                echo -e "warning: for the actual signing, these instructions once manually, once the"
+                echo -e "warning: package is done: https://source.android.com/docs/core/ota/sign_builds${CLR_RST}"
+                echo -e ""
+                echo -e "${CLR_BLD_BLU}Start making target files package${CLR_RST}"
+                echo -e ""
+                m otatools target-files-package
+                checkExit
+                echo -e "${CLR_BLD_BLU}Find your target files package here:"
+                echo -e "$OUT/obj/PACKAGING/target_files_intermediates/aosp_$DEVICE-target_files-eng.nobody.zip"
+                echo -e "Remember to follow https://source.android.com/docs/core/ota/sign_builds$ and good luck!${CLR_RST}"
+                echo -e ""
+                cat build/make/pb_ascii_logo
+                echo -e ""
+                if [ "$FLAG_PB_UPLOAD" ]; then
+                        echo -e "${CLR_BLD_RED}warning: The upload flag is set? (jazz music stops)${CLR_RST}"
+                fi
+        else
+                echo -e "${CLR_BLD_BLU}Start making bacon${CLR_RST}"
+                echo -e ""
+                make bacon -j$JOBS
+                checkExit
+                if [ "$FLAG_PB_UPLOAD" ]; then
+                        if [ -e "$UPLOAD_HELPER_PATH" ]; then
+                                source "$UPLOAD_HELPER_PATH"
+                                upload
+                                checkExit
+                        else
+                                echo -e "${CLR_BLD_RED}warning: The upload flag is set, but the helper doesn't exist !${CLR_RST}"
+                        fi
                 fi
         fi
 fi
