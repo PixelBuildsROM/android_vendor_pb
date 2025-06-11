@@ -42,6 +42,7 @@ function showHelpAndExit {
         echo -e "${CLR_BLD_BLU}  -c, --clean           Wipe the tree before building${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -i, --installclean    Dirty build - Use 'installclean'${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -s, --repo-sync       Sync before building${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}  -g, --gerrit-pick     Pick changes from gerrit for the given topic name{CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -r, --release         Whether we should do a signed release build (won't work without helper)"
         echo -e "${CLR_BLD_BLU}  -u, --upload          Whether we should upload a build (won't work without helper)"
         echo -e "${CLR_BLD_BLU}  -t, --build-type      Specify build type${CLR_RST}"
@@ -52,8 +53,8 @@ function showHelpAndExit {
 }
 
 # Setup getopt.
-long_opts="help,clean,installclean,repo-sync,release,build-type:,jobs:,module:,sign-keys:,pwfile:,backup-unsigned,delta:,imgzip,version:"
-getopt_cmd=$(getopt -o hcruis:t:j:k:p: --long "$long_opts" \
+long_opts="help,clean,installclean,repo-sync,release,build-type:,jobs:,gerrit-pick:,sign-keys:,pwfile:,backup-unsigned,delta:,imgzip,version:"
+getopt_cmd=$(getopt -o hcruis:t:j:k:p:g: --long "$long_opts" \
             -n $(basename $0) -- "$@") || \
             { echo -e "${CLR_BLD_RED}\nError: Getopt failed. Extra args\n${CLR_RST}"; showHelpAndExit; exit 1;}
 
@@ -65,6 +66,7 @@ while true; do
         -c|--clean|c|clean) FLAG_CLEAN_BUILD=y;;
         -i|--installclean|i|installclean) FLAG_INSTALLCLEAN_BUILD=y;;
         -s|--repo-sync|s|repo-sync) FLAG_SYNC=y;;
+        -g|--gerrit-pick|g|gerrit-pick) GERRIT_TOPIC="$2"; shift;;
         -r|--release|r|release) FLAG_PB_RELEASE=y;;
         -u|--upload|u|upload) FLAG_PB_UPLOAD=y;;
         -t|--build-type|t|build-type) BUILD_TYPE="$2"; shift;;
@@ -136,6 +138,13 @@ if [ "$FLAG_SYNC" = 'y' ]; then
         echo -e "${CLR_BLD_BLU}Downloading the latest source files${CLR_RST}"
         echo -e ""
         repo sync -j"$JOBS" -c --force-sync --no-clone-bundle --current-branch --no-tags 
+fi
+
+# Perform repopick, if topic was specified
+if [ $GERRIT_TOPIC ]; then
+        echo -e "${CLR_BLD_BLU}Picking changes from gerrit for topic $GERRIT_TOPIC${CLR_RST}"
+        echo -e ""
+        repopick -q -t "$GERRIT_TOPIC"
 fi
 
 # Check the starting time (of the real build process)
