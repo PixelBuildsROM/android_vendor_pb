@@ -316,7 +316,7 @@ function pbremote()
         local PROJECT=$(echo $REMOTE | sed -e "s#/#_#g")
     else
         local PROJECT=$REMOTE
-        local PFX="pixelbuilds/"
+        local PFX="PixelBuildsROM/"
     fi
     local PIXELBUILDS_USER=$(git config --get review.review.pixelbuilds.org.username)
     if [ -z "$PIXELBUILDS_USER" ]
