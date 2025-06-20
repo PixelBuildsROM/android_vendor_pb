@@ -80,6 +80,8 @@
         <item>com.android.systemui.clocks.metro</item>
         <item>com.android.systemui.clocks.numoverlap</item>
         <item>com.android.systemui.clocks.weather</item>
+        <item>com.google.oslo.OsloOverlay</item>
+        <item>com.google.oslo.OsloSensorManager</item>
     </string-array>
     <string-array name="config_pluginWhitelist">
         <item>com.android.systemui</item>
