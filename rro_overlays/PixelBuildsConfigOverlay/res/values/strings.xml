@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_headlineFontFamily">google-sans</string>
+    <string name="config_headlineFontFamilyMedium">google-sans-medium</string>
+    <string name="biometric_app_setting_name">Use face or fingerprint</string>
+    <string name="biometric_dialog_default_subtitle">Use your face or fingerprint to continue</string>
+    <string name="biometric_or_screen_lock_app_setting_name">Use face, fingerprint, or screen lock</string>
+    <string name="biometric_or_screen_lock_dialog_default_subtitle">Use your face, fingerprint, or screen lock to continue</string>
+    <string name="config_defaultAccessibilityService">com.google.android.marvin.talkback/.TalkBackService</string>
+    <string name="config_defaultDialer">com.google.android.dialer</string>
+    <string name="config_defaultSms">com.google.android.apps.messaging</string>
+    <string name="config_systemAutomotiveProjection">com.google.android.projection.gearhead</string>
+    <string name="config_systemSettingsIntelligence">com.google.android.settings.intelligence</string>
+    <string name="config_systemSpeechRecognizer">com.google.android.tts</string>
+    <string name="config_systemWellbeing">com.google.android.apps.wellbeing</string>
+    <string name="config_systemGallery" translatable="false">org.lineageos.glimpse</string>
+    <string name="config_emergency_dialer_package">com.google.android.apps.safetyhub</string>
+    <string name="face_recalibrate_notification_content">Face unlock may not work until you re-enroll</string>
+    <string name="face_recalibrate_notification_name">Face unlock</string>
+    <string name="face_recalibrate_notification_title">Please re-enroll your face</string>
+    <string name="harmful_app_warning_title">Play Protect warning</string>
+    <string name="safety_protection_display_text">&lt;font face=\"google-sans\">Protected by &lt;/font>&lt;font face=\"google-sans-medium\">Android&lt;/font></string>
+    <string name="vendor_required_attestation_revocation_list_url">https://android.googleapis.com/attestation/status</string>
+    <string name="widget_default_class_name">com.android.alarmclock.DigitalAppWidgetProvider</string>
+    <string name="widget_default_package_name">com.google.android.deskclock</string>
+    <string name="config_systemAudioIntelligence">com.google.android.as</string>
+    <string name="config_systemImageEditor">com.google.android.markup/com.google.android.markup.AnnotateActivity</string>
+    <string name="config_systemNotificationIntelligence">com.google.android.as</string>
+    <string name="config_defaultAmbientContextConsentComponent">com.google.android.as/com.google.android.apps.miphone.aiai.ambientcontext.ui.ConsentActivity</string>
+    <string name="config_defaultAmbientContextDetectionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAmbientContextDetectionService</string>
+    <string name="config_defaultAppPredictionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService</string>
+    <string name="config_defaultAssistantAccessComponent">com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationAssistantService</string>
+    <string name="config_defaultAugmentedAutofillService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService</string>
+    <string name="config_defaultContentCaptureService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService</string>
+    <string name="config_defaultContentSuggestionsService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentSuggestionsService</string>
+    <string name="config_defaultDndAccessPackages">com.google.android.GoogleCamera:com.google.android.gms:com.google.intelligence.sense:com.google.android.settings.intelligence:com.google.android.apps.wellbeing:com.google.android.apps.safetyhub:com.google.android.dialer:com.google.android.apps.diagnosticstool</string>
+    <string name="config_defaultFieldClassificationService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AutofillFieldClassificationService</string>
+    <string name="config_defaultOnDeviceSpeechRecognitionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSpeechRecognitionService</string>
+    <string name="config_defaultSystemCaptionsManagerService">com.google.android.as/com.google.android.apps.miphone.aiai.captions.SystemCaptionsManagerService</string>
+    <string name="config_defaultTextClassifierPackage">com.google.android.as</string>
+    <string name="config_defaultTranslationService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiTranslationService</string>
+    <string name="config_defaultWallpaperEffectsGenerationService">com.google.android.as/com.google.android.apps.miphone.aiai.app.wallpapereffects.AiAiWallpaperEffectsGenerationService</string>
+    <string name="config_defaultSearchUiService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSearchUiService</string>
+    <string name="config_defaultSmartspaceService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService</string>
+    <string name="config_systemTextIntelligence">com.google.android.as</string>
+    <string name="config_systemUiIntelligence">com.google.android.as</string>
+    <string name="config_systemVisualIntelligence">com.google.android.as</string>
+    <string name="config_systemAmbientAudioIntelligence">com.google.android.as</string>
+</resources>
