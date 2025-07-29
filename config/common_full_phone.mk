@@ -5,28 +5,9 @@ $(call inherit-product, vendor/pb/config/common_full.mk)
 PRODUCT_PACKAGES += \
     LatinIME
 
-# Gboard configuration
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.ime.theme_id=5 \
-    ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
-
-# Google Play services configuration
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.error.receiver.system.apps=com.google.android.gms \
-    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent
-
-# SetupWizard configuration
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.setupwizard.enterprise_mode=1 \
-    ro.setupwizard.rotation_locked=true \
-    setupwizard.enable_assist_gesture_training=false \
-    setupwizard.theme=glif_v3_light \
-    setupwizard.feature.day_night_mode_enabled=true \
-    setupwizard.feature.baseline_setupwizard_enabled=true \
-    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
-    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
-    setupwizard.feature.show_support_link_in_deferred_setup=false \
-    setupwizard.feature.show_pixel_tos=false
+# Include Lineage LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/dictionaries
 
 # Google legal
 PRODUCT_PRODUCT_PROPERTIES += \
