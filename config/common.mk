@@ -76,33 +76,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
-# Extra tools from Lineage
-PRODUCT_PACKAGES += \
-    bash \
-    curl \
-    getcap \
-    htop \
-    nano \
-    setcap \
-    vim
-
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/curl \
     system/bin/getcap \
     system/bin/setcap
-
-# Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= false
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-PRODUCT_PACKAGES += \
-    FaceUnlock
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.face.sense_service=true
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-endif
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
@@ -117,22 +94,8 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/%/libfuse-lite.so \
     system/%/libntfs-3g.so
 
-# Openssh
-PRODUCT_PACKAGES += \
-    scp \
-    sftp \
-    ssh \
-    sshd \
-    sshd_config \
-    ssh-keygen \
-    start-ssh
-
 PRODUCT_COPY_FILES += \
     vendor/pb/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
-
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
 
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -173,10 +136,13 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pb/overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/pb/overlay/common
 
-# GMS features
+# Proprietary prebuilts features
 TARGET_SUPPORTS_CALL_RECORDING ?= true
 TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
-TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+
+# SetupWizard
+PRODUCT_PACKAGES += \
+    PixelBuildsSetupWizard
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -184,6 +150,10 @@ PRODUCT_PACKAGES += \
 	libtextclassifier_annotator_universal_model \
 	libtextclassifier_actions_suggestions_universal_model \
 	libtextclassifier_lang_id_model
+
+# ThemePicker
+PRODUCT_PACKAGES += \
+    ThemePicker
 
 # Updater
 ifeq ($(PB_BUILD_TYPE),release)
@@ -206,8 +176,8 @@ include vendor/pb/config/version.mk
 # Audio
 include vendor/pb/config/audio.mk
 
-# GMS
-include vendor/gms/products/gms.mk
+# Prebuilts
+include vendor/prebuilts/common-prebuilts.mk
 
 # Fonts
 include vendor/pb/config/fonts.mk
