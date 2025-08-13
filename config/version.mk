@@ -5,7 +5,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # Internal version
-PB_VERSION ?= infinity
+PB_VERSION ?= infinity-oss
 PB_BUILD_TYPE ?= unsigned
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(PB_BUILD))
