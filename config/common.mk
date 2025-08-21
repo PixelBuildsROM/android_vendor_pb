@@ -182,8 +182,8 @@ include vendor/prebuilts/common-prebuilts.mk
 # Fonts
 include vendor/pb/config/fonts.mk
 
-# Themes
-include vendor/pb/config/themes.mk
+# Customizations
+include vendor/pb/config/customization_overlays.mk
 
 # RRO overlays
 include vendor/pb/config/rro_overlays.mk
