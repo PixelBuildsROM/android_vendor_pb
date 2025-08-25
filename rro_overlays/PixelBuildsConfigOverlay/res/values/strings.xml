@@ -26,6 +26,7 @@
     <string name="config_systemAudioIntelligence">com.google.android.as</string>
     <string name="config_systemImageEditor">com.google.android.markup/com.google.android.markup.AnnotateActivity</string>
     <string name="config_systemNotificationIntelligence">com.google.android.as</string>
+    <string name="config_defaultListenerAccessPackages">com.google.android.as:com.google.android.projection.gearhead:com.google.pixel.exo</string>
     <string name="config_defaultAmbientContextConsentComponent">com.google.android.as/com.google.android.apps.miphone.aiai.ambientcontext.ui.ConsentActivity</string>
     <string name="config_defaultAmbientContextDetectionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAmbientContextDetectionService</string>
     <string name="config_defaultAppPredictionService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService</string>
