@@ -57,6 +57,8 @@
         <item>com.google.android.settings.intelligence</item>
         <!-- OmniJaws -->
         <item>org.omnirom.omnijaws</item>
+        <!-- SystemUI -->
+        <item>com.android.systemui</item>
     </string-array>
 
     <bool name="config_cellBroadcastAppLinks">true</bool>
