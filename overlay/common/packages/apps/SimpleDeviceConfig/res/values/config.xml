@@ -51,79 +51,6 @@
             Device Personalization Services (AiAi)
         -->
 
-        <!-- Smartspace -->
-        <item>device_personalization_services/Cell__enable_cell=true</item>
-        <item>device_personalization_services/Cell__enable_smartspace_events=true</item>
-        <item>device_personalization_services/EchoSmartspace__check_notification_visibility=true</item>
-        <item>device_personalization_services/EchoSmartspace__doorbell_when_for_update_time=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_add_contextual_feedback_button_on_long_press=false</item>
-        <item>device_personalization_services/EchoSmartspace__enable_add_internal_feedback_button=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_agsa_settings_read=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_cross_feature_rank_dedup_twiddler=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_dimensional_logging=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_encode_subcard_into_smartspace_target_id=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_flight_landing_smartspace_aiai=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_hotel_smartspace_aiai=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_media_recs_for_driving=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_predictor_expiration=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_ring_channels_regex=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_ring_using_ui_template=true</item>
-        <item>device_personalization_services/EchoSmartspace__enable_travel_features_type_merge=true</item>
-        <item>device_personalization_services/EchoSmartspace__ring_channels_regex=4_ding_channel_notification\d+</item>
-        <item>device_personalization_services/EchoSmartspace__ring_lockscreen_delay_seconds=0</item>
-        <item>device_personalization_services/EchoSmartspace__ring_on_aod_only=true</item>
-        <item>device_personalization_services/EchoSmartspace__runtastic_check_pause_action=true</item>
-        <item>device_personalization_services/EchoSmartspace__runtastic_is_ongoing_default_true=true</item>
-        <item>device_personalization_services/EchoSmartspace__smartspace_enable_daily_forecast=true</item>
-        <item>device_personalization_services/EchoSmartspace__smartspace_enable_timely_reminder=true</item>
-        <item>device_personalization_services/EchoSmartspace__strava_check_stop_action=true</item>
-        <item>device_personalization_services/Echo__smartspace_dedupe_fast_pair_notification=true</item>
-        <item>device_personalization_services/Echo__smartspace_doorbell_aiai_loading_screen=false</item>
-        <item>device_personalization_services/Echo__smartspace_doorbell_allowlist_packages=com.nest.android, com.google.android.apps.chromecast.app</item>
-        <item>device_personalization_services/Echo__smartspace_doorbell_loading_screen_state=4</item>
-        <item>device_personalization_services/Echo__smartspace_enable_async_icon=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_battery_notification_parser=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_bedtime_active_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_bedtime_reminder_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_bluetooth_metadata_parser=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_cross_device_timer=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_dark_launch_outlook_events=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_doorbell=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_doorbell_context_wrapper=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_doorbell_extras=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_dwb_bedtime_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_earthquake_alert_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_echo_settings=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_echo_unified_settings=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_eta_doordash=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_eta_lyft=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_food_delivery_eta=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_grocery=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_light_off_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_light_predictor=false</item>
-        <item>device_personalization_services/Echo__smartspace_enable_media_wake_lock_acquire=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_nap=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_nudge=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_outlook_events=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_package_delivery=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_paired_device_connections=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_paired_device_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_ridesharing_eta=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_safety_check_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_score_ranker=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_sensitive_notification_twiddler=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_step_predictor=true</item>
-        <item>device_personalization_services/Echo__smartspace_enable_subcard_logging=true</item>
-        <item>device_personalization_services/Echo__smartspace_gaia_twiddler=true</item>
-        <item>device_personalization_services/Echo__smartspace_outlook_event_source_of_truth=TEXT_ONLY</item>
-        <item>device_personalization_services/Echo__smartspace_package_delivery_card_delay_seconds=0</item>
-        <item>device_personalization_services/Echo__smartspace_show_cross_device_timer_label=true</item>
-        <item>device_personalization_services/Echo__smartspace_use_flashlight_action_chip=false</item>
-        <item>device_personalization_services/Echo_smartspace__enable_flight_landing_smartspace_aiai=true</item>
-        <item>device_personalization_services/Echo_smartspace__enable_hotel_smartspace_aiai=true</item>
-        <item>device_personalization_services/Echo_smartspace__smartspace_enable_daily_forecast=true</item>
-        <item>device_personalization_services/Echo_smartspace__smartspace_enable_timely_reminder=true</item>
-
         <!-- Now Playing (Pixel 2017+) -->
         <item>device_personalization_services/NowPlaying__ambient_music_apk_music_detector_min_score=0.2</item>
         <item>device_personalization_services/NowPlaying__ambient_music_get_model_state_cooldown_seconds_cloud_search=9</item>
@@ -143,37 +70,6 @@
         <item>device_personalization_services/AdaptiveAudio__enable_adaptive_audio=true</item>
         <item>device_personalization_services/AdaptiveAudio__show_promo_notification=false</item>
         <item>device_personalization_services/AdaptiveAudio__use_silence_detector_state_bug_fix=true</item>
-
-        <!-- Live Caption -->
-        <item>device_personalization_services/Captions__enable_augmented_modality=true</item>
-        <item>device_personalization_services/Captions__enable_augmented_modality_input=true</item>
-        <item>device_personalization_services/Captions__enable_augmented_modality_language_detection=true</item>
-        <item>device_personalization_services/Captions__enable_augmented_music=false</item>
-        <item>device_personalization_services/Captions__enable_clearcut_logging=true</item>
-        <item>device_personalization_services/Captions__enable_language_detection=true</item>
-        <item>device_personalization_services/Captions__enable_punctuations=true</item>
-        <item>device_personalization_services/Captions__available_for_download=en-US;en-GB;en-CA;en-IE;en-AU;en-SG;en-IN;fr-FR;fr-CA;fr-BE;fr-CH;it-IT;it-CH;de-DE;de-AT;de-BE;de-CH;ja-JP;es-ES;es-US</item>
-        <item>device_personalization_services/Captions__manifest_url_template=https://storage.googleapis.com/captions/%{NAMESPACE}_%{VERSION}_manifest.json</item>
-        <item>device_personalization_services/Captions__model_version_v1=20190613</item>
-        <item>device_personalization_services/Captions__model_version_v1_2=20200112</item>
-        <item>device_personalization_services/Captions__new_model_version=20210623</item>
-        <item>device_personalization_services/Captions__new_model_version_advanced=20221227</item>
-        <item>device_personalization_services/Captions__speech_threshold=0.2</item>
-        <item>device_personalization_services/Captions__support_lang_id_disabled_after_dismissals=false</item>
-        <item>device_personalization_services/Captions__supported_languages=en-US;fr-FR;it-IT;de-DE;ja-JP;es-ES</item>
-        <item>device_personalization_services/Captions__supported_languages_beta_quality=ja-JP</item>
-        <item>device_personalization_services/Captions__surface_sound_events=true</item>
-        <item>device_personalization_services/Captions__text_transform_augmented_input=true</item>
-        <item>device_personalization_services/Captions__visibility_playing_duration_millis=5000</item>
-        <item>device_personalization_services/Captions__visibility_stopped_duration_millis=1500</item>
-
-        <!-- Live translate -->
-        <item>device_personalization_services/Translate__chat_translate_languages=de,en,es,fr,it,ja,hi,zh,ru,pl,pt,ko,th,tr,nl,zh_Hant,sv,da,vi,ar,fa,no,bn,fil</item>
-        <item>device_personalization_services/Translate__enable_chronicle_migration=true</item>
-        <item>device_personalization_services/Translate__enable_opmv4_service=true</item>
-        <item>device_personalization_services/Translate__enable_spa_setting=false</item>
-        <item>device_personalization_services/Translate__interpreter_source_languages=de,en,ja</item>
-        <item>device_personalization_services/Translate__interpreter_target_languages=de,en,ja</item>
 
         <!-- On-device speech recognition-->
         <item>device_personalization_services/SpeechPack__downloadable_language_packs_raw=ChRhc21kX2ZlYXR1cmVfbGlzdF9xYTLEAgoFZW4tVVMSBWVuLVVTGklodHRwczovL2RsLmdvb2dsZS5jb20vYW5kcm9pZC92b2ljZS9zb2RhL2VuLVVTL3YzMDA4L3NvZGEtZW4tVVMtdjMwMDguemlwIMAXKOnZAjIUc29kYS1lbi1VUy12MzAwOC1mNTQ4NkBkYkA5Mzc3MzkxNjMwREIzMDZBRUYzODFFREMwMjFBNEQ5QkM2OUMwMjA5RkZBQ0YwNjU4Qzg5MTE4NDcwRERDQTcxeAF4AngDeAR4BXgGeAeKASg2Q0NCOEQxRTdCNjFGQTI0MEUwMjAwNjc5QjlDMUQ1ODc2RjUzODZDogEOCBYQAxAEEAUQBhAJEAqiAQoIFxADEAQQCRAKqgEECAEQF6oBBAgCEBaqAQQIAxAXqgEECAQQFqoBBAgFEBeqAQQIBhAWqgEECAcQFjLAAgoFZGUtREUSBWRlLURFGklodHRwczovL2RsLmdvb2dsZS5jb20vYW5kcm9pZC92b2ljZS9zb2RhL2RlLURFL3YzMDAzL3NvZGEtZGUtREUtdjMwMDMuemlwILsXKKqABDIQc29kYS1kZS1ERS12MzAwMzg2QGRiQDBBRkE2QjNBNzFFMTk3ODkzM0RDNjlENjZCODU1OTY5REE1RThEQzBEMEI4RDREMEZBNkU4RjYzRTUxOTcyMzZ4AXgCeAN4BHgFeAZ4B4oBKDQ3M0FGRTMzMDNEMjc1RDMwREY5MkY5RTFFQTA2NEZFMjFBNEFBRDKiAQwIFhADEAQQBRAJEAqiAQwIFxADEAQQBRAJEAqqAQQIARAXqgEECAIQFqoBBAgDEBeqAQQIBBAWqgEECAUQF6oBBAgGEBaqAQQIBxAWMrQCCgVlcy1FUxIFZXMtRVMaSWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9hbmRyb2lkL3ZvaWNlL3NvZGEvZXMtRVMvdjMwMDAvc29kYS1lcy1FUy12MzAwMC56aXAguBcouIEDMhBzb2RhLWVzLUVTLXYzMDAwODZAZGJANTA4NjQ1MEUzMjdFNDk4QzBDNTdEQ0VGRDUwREMxOUM5ODBGRjQwNEQzRUI5ODA0N0UyQjFENkFDMkJGNUMzOXgBeAJ4A3gEeAV4BngHigEoNEY1NTRDNTE0MzYyMDU1MjVENTg1MTkzMjk4NzBFQzkwMjU4MjREQ6IBBggWEAkQCqIBBggXEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYyxAIKBWZyLUZSEgVmci1GUhpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9mci1GUi92MzAwMy9zb2RhLWZyLUZSLXYzMDAzLnppcCC7Fyi72QYyEHNvZGEtZnItRlItdjMwMDM4NkBkYkA2QTlENjg3QjExQjVCMTc2MTczNjMwMjk0MTMwNzk0RTc1NjcwRTlGQzc4REY0M0Y5NUVBNTE2RkNCOTc4RkMyeAF4AngDeAR4BXgGeAeKASgxNEQxNUQ2RDNFOEEzM0EzMTE5QjZCQjhCNjYwRDEwREIyRDYyNzRGogEOCBYQAxAEEAUQBhAJEAqiAQ4IFxADEAQQBRAGEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYyvAIKBWl0LUlUEgVpdC1JVBpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9pdC1JVC92MzAwMC9zb2RhLWl0LUlULXYzMDAwLnppcCC4FyitpQMyEHNvZGEtaXQtSVQtdjMwMDA4NkBkYkAzMDYyRTJCOUVBNEExNzlGMjA3NkJFNDQwQzVDNUQ0NjM3MDA2NzZFMkNBQ0U1MzU1NDUzNThBMjYyOEVDOEMyeAF4AngDeAR4BXgGeAeKASgxOEQyNUQ1NjFGRjMwRENEQUZDQ0E4N0Q3RUY3QjA4NEM0MDBCNTRFogEKCBYQAxAFEAkQCqIBCggXEAMQBRAJEAqqAQQIARAXqgEECAIQFqoBBAgDEBeqAQQIBBAWqgEECAUQF6oBBAgGEBaqAQQIBxAWMsACCgVlbi1BVRIFZW4tQVUaSWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9hbmRyb2lkL3ZvaWNlL3NvZGEvZW4tQVUvdjMwMDMvc29kYS1lbi1BVS12MzAwMy56aXAguxcowtYCMhBzb2RhLWVuLUFVLXYzMDAzODZAZGJAMTA1Q0Q4Mzg1RTNBMzA3N0RENUI5OUJDNTczRUUxMEE0NDAwRjc0QzY3NDk2NTJGMDJGRjlFODc5MkU4RDkxQXgBeAJ4A3gEeAV4BngHigEoOUE2QTU2NjdCNkEyREE5NjJGNUU3MzRCOUNFNUUzMzRCQTlDQjIzRaIBDggWEAMQBBAFEAYQCRAKogEKCBcQAxAEEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYywAIKBWVuLUdCEgVlbi1HQhpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9lbi1HQi92MzAwMi9zb2RhLWVuLUdCLXYzMDAyLnppcCC6Fyj01gIyEHNvZGEtZW4tR0ItdjMwMDI4NkBkYkBGRDgyOTRBQjJEQjlBQUVFRTAwMzlGMkI4MjRGMkMzMzhCMUYwRkJCMTU4QzU4MERGN0Y5MDc5NTdBRkRCNkM0eAF4AngDeAR4BXgGeAeKASg5RjY3RDgwNTUxNTFDMjAyNjYwRERDMjVCNEI0RDRGNDQyQ0UxOUFCogEOCBYQAxAEEAUQBhAJEAqiAQoIFxADEAQQCRAKqgEECAEQF6oBBAgCEBaqAQQIAxAXqgEECAQQFqoBBAgFEBeqAQQIBhAWqgEECAcQFjLAAgoFZW4tSUUSBWVuLUlFGklodHRwczovL2RsLmdvb2dsZS5jb20vYW5kcm9pZC92b2ljZS9zb2RhL2VuLUlFL3YzMDAyL3NvZGEtZW4tSUUtdjMwMDIuemlwILoXKPTWAjIQc29kYS1lbi1JRS12MzAwMjg2QGRiQDgyODY3RDVFRTRGOUIzM0IwOEYyN0NCMkI1OEM4OEM5NDg1RTMzMTFBNzgxRTA3MzYyODYzRkIzRjRFMjQwMTh4AXgCeAN4BHgFeAZ4B4oBKDZBNTMyQzBENURDQzE3Rjk3Rjc0OTkzMzRERjdFRkU1N0RDRjdERkaiAQ4IFhADEAQQBRAGEAkQCqIBCggXEAMQBBAJEAqqAQQIARAXqgEECAIQFqoBBAgDEBeqAQQIBBAWqgEECAUQF6oBBAgGEBaqAQQIBxAWMsACCgVlbi1TRxIFZW4tU0caSWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9hbmRyb2lkL3ZvaWNlL3NvZGEvZW4tU0cvdjMwMDEvc29kYS1lbi1TRy12MzAwMS56aXAguRco9NYCMhBzb2RhLWVuLVNHLXYzMDAxODZAZGJANDRBMkY4MDNGRjE4NDhGQUUwNzdBQzhCM0I0RkFDRTM5MDFEOUZGNTQxOTg3RUNCRUFERkJGRkE5MEQyRDhCMXgBeAJ4A3gEeAV4BngHigEoNEUyRjg0RTY5NkVFQUU0ODNEMjA3QTI0NEJERThERTJFNUU0OTA4QaIBDggWEAMQBBAFEAYQCRAKogEKCBcQAxAEEAkQCqoBBAgBEBeqAQQIAhAWqgEECAMQF6oBBAgEEBaqAQQIBRAXqgEECAYQFqoBBAgHEBYywAIKBWphLUpQEgVqYS1KUBpJaHR0cHM6Ly9kbC5nb29nbGUuY29tL2FuZHJvaWQvdm9pY2Uvc29kYS9qYS1KUC92MzAwNC9zb2RhLWphLUpQLXYzMDA0LnppcCC8FyikyAMyEHNvZGEtamEtSlAtdjMwMDQ4NkBkYkA1MUU1M0U3MkU3REM1RjA2QzM0NzhBM0VEMDA1MTcwQjZCNEY3QTI5NjVGNUIyN0VCQ0YwOUM4ODJCOENFRjlCeAF4AngDeAR4BXgGeAeKASgyOEQzOTQ1RTBCQ0IyNkJDNUUzNzZGNzZBRDc5OEY4MTlFMThBMEM0ogEMCBYQAxAEEAUQCRAKogEMCBcQAxAEEAUQCRAKqgEECAEQF6oBBAgCEBaqAQQIAxAXqgEECAQQFqoBBAgFEBeqAQQIBhAWqgEECAcQFg</item>
