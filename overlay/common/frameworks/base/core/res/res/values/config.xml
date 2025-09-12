@@ -53,8 +53,6 @@
         <item>com.shannon.imsservice</item>
         <!-- MediaTek ImsService -->
         <item>com.mediatek.ims</item>
-        <!-- SettingsIntelligence -->
-        <item>com.google.android.settings.intelligence</item>
         <!-- OmniJaws -->
         <item>org.omnirom.omnijaws</item>
         <!-- SystemUI -->
@@ -169,7 +167,5 @@
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicNotificationsSettingsActivity</item>
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSetupWizardActivity</item>
         <item>com.google.android.dialer/com.android.dialer.rtt.settings.impl.gateway.RttSettingsDeepLink</item>
-        <item>com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.batterywidget.impl.BatteryAppWidgetProvider</item>
-        <item>com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.batterywidget.impl.BatteryWidgetPromoActivity</item>
     </string-array>
 </resources>
