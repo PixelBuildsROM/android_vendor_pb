@@ -179,9 +179,6 @@ include vendor/pb/config/audio.mk
 # Prebuilts
 include vendor/prebuilts/common-prebuilts.mk
 
-# Fonts
-include vendor/pb/config/fonts.mk
-
 # Customizations
 include vendor/pb/config/customization_overlays.mk
 

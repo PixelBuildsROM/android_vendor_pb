@@ -157,7 +157,7 @@
      <bool name="config_biometricFrrNotificationEnabled">true</bool>
 
      <!-- Name of the font family to use in the default lockscreen clock -->
-    <string name="config_clockFontFamily">google-sans-clock</string>
+    <string name="config_clockFontFamily" />
     
     <!-- Disable stock components if installed -->
     <string-array name="config_globallyDisabledComponents" translatable="false">
