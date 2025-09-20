@@ -32,7 +32,7 @@ DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
 custom_local_manifest = ".repo/local_manifests/pixelbuilds_manifest.xml"
-custom_default_revision = "infinity"
+custom_default_revision = "infinity-oss"
 custom_dependencies = "aosp.dependencies"
 org_manifest = "pixelbuilds-devices"  # leave empty if org is provided in manifest
 org_display = "PixelBuilds-Devices"  # needed for displaying
