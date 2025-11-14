@@ -185,8 +185,8 @@ include vendor/pb/config/customization_overlays.mk
 # RRO overlays
 include vendor/pb/config/rro_overlays.mk
 
-# Certified build props overlay
--include vendor/pb/private/certified_props.mk
+# Release configuration
+-include vendor/pb/private/release.mk
 
 # Key migration
 include vendor/pb/config/keys_migration.mk
