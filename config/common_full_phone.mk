@@ -19,8 +19,8 @@ PRODUCT_PACKAGES += \
     LatinIME
 
 # Include Lineage LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/pb/overlay/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pb/overlay/dictionaries
 
 # Google legal
 PRODUCT_PRODUCT_PROPERTIES += \
