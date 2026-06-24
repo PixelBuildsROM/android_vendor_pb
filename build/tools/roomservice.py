@@ -34,8 +34,8 @@ default_manifest = ".repo/manifest.xml"
 custom_local_manifest = ".repo/local_manifests/pixelbuilds_manifest.xml"
 custom_default_revision = "infinity-oss"
 custom_dependencies = "aosp.dependencies"
-org_manifest = "pixelbuilds-devices"  # leave empty if org is provided in manifest
-org_display = "PixelBuilds-Devices"  # needed for displaying
+org_manifest = ""  # leave empty if org is provided in manifest
+org_display = "device-trees"  # needed for displaying
 
 github_auth = None
 
@@ -50,21 +50,21 @@ def debug(*args, **kwargs):
         print(*args, **kwargs)
 
 
-def add_auth(g_req):
-    global github_auth
-    if github_auth is None:
-        try:
-            auth = netrc.netrc().authenticators("api.github.com")
-        except (netrc.NetrcParseError, IOError):
-            auth = None
-        if auth:
-            github_auth = base64.b64encode(
-                ('%s:%s' % (auth[0], auth[2])).encode()
-            )
-        else:
-            github_auth = ""
-    if github_auth:
-        g_req.add_header("Authorization", "Basic %s" % github_auth)
+# def add_auth(g_req):
+#     global github_auth
+#     if github_auth is None:
+#         try:
+#             auth = netrc.netrc().authenticators("api.github.com")
+#         except (netrc.NetrcParseError, IOError):
+#             auth = None
+#         if auth:
+#             github_auth = base64.b64encode(
+#                 ('%s:%s' % (auth[0], auth[2])).encode()
+#             )
+#         else:
+#             github_auth = ""
+#     if github_auth:
+#         g_req.add_header("Authorization", "Basic %s" % github_auth)
 
 
 def indent(elem, level=0):
@@ -153,7 +153,7 @@ def add_to_manifest(repos, fallback_branch=None):
         elif "/" not in repo_name:
             repo_remote=org_manifest
         elif "/" in repo_name:
-            repo_remote="github"
+            repo_remote="gitea"
 
         if is_in_manifest(repo_path):
             print('%s already exists in the manifest' % repo_path)
@@ -247,7 +247,7 @@ def detect_revision(repo):
     print("Checking branch info")
     githubreq = urllib.request.Request(
         repo['branches_url'].replace('{/branch}', ''))
-    add_auth(githubreq)
+    # add_auth(githubreq)
     result = json.loads(urllib.request.urlopen(githubreq).read().decode())
 
     calc_revision = get_revision()
@@ -298,22 +298,22 @@ def main():
         sys.exit()
 
     print("Device {0} not found. Attempting to retrieve device repository from "
-          "{1} Github (http://github.com/{1}).".format(device, org_display))
+          "{1} Gitea (http://git.pixelbuilds.org/{1}).".format(device, org_display))
 
     githubreq = urllib.request.Request(
-        "https://api.github.com/search/repositories?"
+        "https://git.pixelbuilds.org/api/v1/repos/search?"
         "q={0}+user:{1}+in:name+fork:true".format(device, org_display))
-    add_auth(githubreq)
+    # add_auth(githubreq)
 
     repositories = []
 
     try:
         result = json.loads(urllib.request.urlopen(githubreq).read().decode())
     except urllib.error.URLError:
-        print("Failed to search GitHub")
+        print("Failed to search Gitea")
         sys.exit(1)
     except ValueError:
-        print("Failed to parse return data from GitHub")
+        print("Failed to parse return data from Gitea")
         sys.exit(1)
     for res in result.get('items', []):
         repositories.append(res)
@@ -341,7 +341,7 @@ def main():
         print("Done")
         sys.exit()
 
-    print("Repository for %s not found in the %s Github repository list."
+    print("Repository for %s not found in the %s Gitea repository list."
           % (device, org_display))
     print("If this is in error, you may need to manually add it to your "
           "%s" % custom_local_manifest)
