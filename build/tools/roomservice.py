@@ -34,8 +34,8 @@ default_manifest = ".repo/manifest.xml"
 custom_local_manifest = ".repo/local_manifests/pixelbuilds_manifest.xml"
 custom_default_revision = "infinity-oss"
 custom_dependencies = "aosp.dependencies"
-org_manifest = "pixelbuilds-devices"  # leave empty if org is provided in manifest
-org_display = "PixelBuilds-Devices"  # needed for displaying
+org_manifest = "pixelbuilds-gitea-devices"  # leave empty if org is provided in manifest
+org_display = "device-trees"  # needed for displaying
 
 github_auth = None
 
@@ -50,21 +50,21 @@ def debug(*args, **kwargs):
         print(*args, **kwargs)
 
 
-def add_auth(g_req):
-    global github_auth
-    if github_auth is None:
-        try:
-            auth = netrc.netrc().authenticators("api.github.com")
-        except (netrc.NetrcParseError, IOError):
-            auth = None
-        if auth:
-            github_auth = base64.b64encode(
-                ('%s:%s' % (auth[0], auth[2])).encode()
-            )
-        else:
-            github_auth = ""
-    if github_auth:
-        g_req.add_header("Authorization", "Basic %s" % github_auth)
+# def add_auth(g_req):
+#     global github_auth
+#     if github_auth is None:
+#         try:
+#             auth = netrc.netrc().authenticators("api.github.com")
+#         except (netrc.NetrcParseError, IOError):
+#             auth = None
+#         if auth:
+#             github_auth = base64.b64encode(
+#                 ('%s:%s' % (auth[0], auth[2])).encode()
+#             )
+#         else:
+#             github_auth = ""
+#     if github_auth:
+#         g_req.add_header("Authorization", "Basic %s" % github_auth)
 
 
 def indent(elem, level=0):
@@ -153,7 +153,7 @@ def add_to_manifest(repos, fallback_branch=None):
         elif "/" not in repo_name:
             repo_remote=org_manifest
         elif "/" in repo_name:
-            repo_remote="github"
+            repo_remote="gitea"
 
         if is_in_manifest(repo_path):
             print('%s already exists in the manifest' % repo_path)
@@ -241,38 +241,59 @@ def has_branch(branches, revision):
 
 def detect_revision(repo):
     """
-    returns None if using the default revision, else return
-    the branch name if using a different revision
+    Returns None if using the default revision,
+    otherwise returns the branch name.
     """
     print("Checking branch info")
-    githubreq = urllib.request.Request(
-        repo['branches_url'].replace('{/branch}', ''))
-    add_auth(githubreq)
-    result = json.loads(urllib.request.urlopen(githubreq).read().decode())
+
+    owner = repo["owner"]["login"]
+    repo_name = repo["name"]
+
+    req = urllib.request.Request(
+        f"https://git.pixelbuilds.org/api/v1/repos/{owner}/{repo_name}/branches"
+    )
+
+    try:
+        result = json.loads(
+            urllib.request.urlopen(req).read().decode()
+        )
+    except urllib.error.URLError:
+        print("Failed to fetch branch list")
+        sys.exit(1)
 
     calc_revision = get_revision()
-    print("Calculated revision: %s" % calc_revision)
+    print(f"Calculated revision: {calc_revision}")
 
     if has_branch(result, calc_revision):
         return calc_revision
 
-    fallbacks = os.getenv('ROOMSERVICE_BRANCHES', '').split()
-    for fallback in fallbacks:
+    for fallback in os.getenv("ROOMSERVICE_BRANCHES", "").split():
         if has_branch(result, fallback):
-            print("Using fallback branch: %s" % fallback)
+            print(f"Using fallback branch: {fallback}")
             return fallback
 
     if has_branch(result, custom_default_revision):
-        print("Falling back to custom revision: %s"
-              % custom_default_revision)
+        print(
+            f"Falling back to custom revision: "
+            f"{custom_default_revision}"
+        )
         return custom_default_revision
+
+    # Optional: fall back to repo default branch
+    default_branch = repo.get("default_branch")
+    if default_branch and has_branch(result, default_branch):
+        print(f"Falling back to default branch: {default_branch}")
+        return default_branch
 
     print("Branches found:")
     for branch in result:
-        print(branch['name'])
-    print("Use the ROOMSERVICE_BRANCHES environment variable to "
-          "specify a list of fallback branches.")
-    sys.exit()
+        print(branch["name"])
+
+    print(
+        "Use the ROOMSERVICE_BRANCHES environment variable "
+        "to specify a list of fallback branches."
+    )
+    sys.exit(1)
 
 
 def main():
@@ -297,54 +318,65 @@ def main():
                   "non-existing device tree?")
         sys.exit()
 
-    print("Device {0} not found. Attempting to retrieve device repository from "
-          "{1} Github (http://github.com/{1}).".format(device, org_display))
+    print(
+        f"Device {device} not found. Attempting to retrieve device repository "
+        f"from {org_display} Gitea."
+    )
 
-    githubreq = urllib.request.Request(
-        "https://api.github.com/search/repositories?"
-        "q={0}+user:{1}+in:name+fork:true".format(device, org_display))
-    add_auth(githubreq)
-
-    repositories = []
+    repos_req = urllib.request.Request(
+        f"https://git.pixelbuilds.org/api/v1/orgs/{org_display}/repos?limit=1000"
+    )
 
     try:
-        result = json.loads(urllib.request.urlopen(githubreq).read().decode())
+        repositories = json.loads(
+            urllib.request.urlopen(repos_req).read().decode()
+        )
     except urllib.error.URLError:
-        print("Failed to search GitHub")
+        print("Failed to query Gitea")
         sys.exit(1)
     except ValueError:
-        print("Failed to parse return data from GitHub")
+        print("Failed to parse return data from Gitea")
         sys.exit(1)
-    for res in result.get('items', []):
-        repositories.append(res)
 
     for repository in repositories:
-        repo_name = repository['name']
+        repo_name = repository["name"]
 
-        if not (repo_name.startswith("android_device_") and
-                repo_name.endswith("_" + device)):
+        if not (
+            repo_name.startswith("android_device_")
+            and repo_name.endswith(f"_{device}")
+        ):
             continue
-        print("Found repository: %s" % repository['name'])
+
+        print(f"Found repository: {repo_name}")
 
         fallback_branch = detect_revision(repository)
-        manufacturer = repo_name.split('_')[2]
-        repo_path = "device/%s/%s" % (manufacturer, device)
-        adding = [{'repository': repo_name, 'target_path': repo_path}]
+        manufacturer = repo_name.split("_")[2]
+        repo_path = f"device/{manufacturer}/{device}"
 
-        add_to_manifest(adding, fallback_branch)
+        add_to_manifest(
+            [{
+                "repository": repo_name,
+                "target_path": repo_path
+            }],
+            fallback_branch
+        )
 
         print("Syncing repository to retrieve project.")
-        os.system('repo sync --force-sync --no-tags --current-branch --no-clone-bundle %s' % repo_path)
+        os.system(
+            "repo sync --force-sync --no-tags "
+            "--current-branch --no-clone-bundle "
+            f"{repo_path}"
+        )
+
         print("Repository synced!")
 
         fetch_dependencies(repo_path, fallback_branch)
+
         print("Done")
         sys.exit()
 
-    print("Repository for %s not found in the %s Github repository list."
-          % (device, org_display))
-    print("If this is in error, you may need to manually add it to your "
-          "%s" % custom_local_manifest)
+    print(f"No repository found for device {device}")
+    sys.exit(1)
 
 if __name__ == "__main__":
     main()
